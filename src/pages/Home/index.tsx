@@ -11,10 +11,10 @@ const Home: React.FC = () => {
             <FormComponent />
             <Row>
                 <Col>
-                    <JumbotronComponent label="Com Plano:" value="45,00" />
+                    <JumbotronComponent label="Com FaleMais:" value="45,00" />
                 </Col>
                 <Col>
-                    <JumbotronComponent label="Sem  Plano:" value="51,00" />
+                    <JumbotronComponent label="Sem  FaleMais:" value="51,00" />
                 </Col>
             </Row>
         </div>

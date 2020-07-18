@@ -10,7 +10,7 @@ const JumbotronComponent: React.FC<Props> = ({ label, value }) => {
     return (
         <Jumbotron className="text-center mt-5">
             <h1>
-                {label} <strong>R$ {value}</strong>
+                {label} <br /> <strong>R$ {value}</strong>
             </h1>
         </Jumbotron>
     );
