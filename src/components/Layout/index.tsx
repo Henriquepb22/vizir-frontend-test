@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
 
 import Header from "../Header";
 
@@ -6,7 +7,7 @@ const Layout: React.FC = ({ children }) => {
     return (
         <div>
             <Header />
-            {children}
+            <Container fluid="sm">{children}</Container>
         </div>
     );
 };
