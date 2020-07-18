@@ -8,9 +8,10 @@ type Props = {
 
 const JumbotronComponent: React.FC<Props> = ({ label, value }) => {
     return (
-        <Jumbotron className="text-center mt-5">
+        <Jumbotron>
             <h1>
-                {label} <br /> <strong>R$ {value}</strong>
+                {label} <br />
+                <strong className="text-nowrap">R$ {value}</strong>
             </h1>
         </Jumbotron>
     );
