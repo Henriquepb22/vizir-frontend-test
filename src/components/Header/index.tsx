@@ -7,25 +7,19 @@ const Header: React.FC = () => {
     const location = useLocation();
 
     return (
+        <header>
         <Navbar bg="light" variant="light" expand="md">
-            <Link to="/">
-                <Navbar.Brand href="/">Telzir</Navbar.Brand>
-            </Link>
+                <Navbar.Brand as={Link} to="/">Telzir</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-collapse" />
             <Navbar.Collapse id="navbar-collapse">
                 <Nav className="ml-auto" activeKey={location.pathname}>
-                    <Link to="/">
-                        <Nav.Link href="/">Inicio</Nav.Link>
-                    </Link>
-                    <Link to="/planos">
-                        <Nav.Link href="/planos">Planos</Nav.Link>
-                    </Link>
-                    <Link to="/sobre">
-                        <Nav.Link href="/sobre">Sobre Nós</Nav.Link>
-                    </Link>
+                        <Nav.Link as={Link} to="/" href="/">Inicio</Nav.Link>
+                        <Nav.Link as={Link} to="/planos" href="/planos">Planos</Nav.Link>
+                        <Nav.Link as={Link} to="/sobre" href="/sobre">Sobre Nós</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
+        </header>
     );
 };
 
