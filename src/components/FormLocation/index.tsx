@@ -2,7 +2,12 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-const FormLocation: React.FC = () => {
+type Props = {
+    onDestinyChange: React.Dispatch<React.SetStateAction<number>>;
+    onOriginChange: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const FormLocation: React.FC<Props> = ({ onOriginChange, onDestinyChange }) => {
     return (
         <Form.Group controlId="dddControl">
             <Form.Label>DDD:</Form.Label>
