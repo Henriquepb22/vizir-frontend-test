@@ -5,10 +5,10 @@ import Header from "../Header";
 
 const Layout: React.FC = ({ children }) => {
     return (
-        <div>
+        <>
             <Header />
             <Container fluid="sm">{children}</Container>
-        </div>
+        </>
     );
 };
 

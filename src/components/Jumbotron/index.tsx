@@ -3,7 +3,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 
 type Props = {
     label: string;
-    value: string;
+    value: number;
 };
 
 const JumbotronComponent: React.FC<Props> = ({ label, value }) => {

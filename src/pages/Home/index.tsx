@@ -1,38 +1,37 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Spinner from "react-bootstrap/Spinner";
 
 import FormComponent from "../../components/Form";
 import JumbotronComponent from "../../components/Jumbotron";
 
+import reducer from "../../reducers";
+import { initialState } from "../../reducers/";
+
 const Home: React.FC = () => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [{ withPlanValue, withoutPlanValue }, dispatch] = useReducer(
+        reducer,
+        initialState
+    );
 
     return (
-        <div className="mt-5">
-            <FormComponent />
+        <main className="mt-5">
+            <FormComponent dispatch={dispatch} />
             <Row className="text-center justify-content-center mt-5">
-                {isLoading ? (
-                    <Spinner animation="border" color="black" />
-                ) : (
-                    <>
-                        <Col>
-                            <JumbotronComponent
-                                label="Com FaleMais:"
-                                value="45,00"
-                            />
-                        </Col>
-                        <Col>
-                            <JumbotronComponent
-                                label="Sem FaleMais:"
-                                value="51,00"
-                            />
-                        </Col>
-                    </>
-                )}
+                <Col>
+                    <JumbotronComponent
+                        label="Com FaleMais:"
+                        value={withPlanValue}
+                    />
+                </Col>
+                <Col>
+                    <JumbotronComponent
+                        label="Sem FaleMais:"
+                        value={withoutPlanValue}
+                    />
+                </Col>
             </Row>
-        </div>
+        </main>
     );
 };
 

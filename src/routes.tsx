@@ -1,28 +1,23 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Plans from "./pages/Plans";
 import About from "./pages/About";
-import Layout from "./components/Layout";
 
 const Routes = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Layout>
                 <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/planos">
-                        <Plans />
-                    </Route>
-                    <Route path="/sobre">
-                        <About />
-                    </Route>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/planos" component={Plans} />
+                    <Route path="/sobre" component={About} />
+                    <Redirect from="*" to="/" />
                 </Switch>
             </Layout>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
