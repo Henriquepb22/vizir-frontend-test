@@ -7,8 +7,8 @@ type Props = {
 };
 
 const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
-    const [origin, setOrigin] = useState(0);
-    const [destiny, setDestiny] = useState(0);
+    const [origin, setOrigin] = useState<number | string>("");
+    const [destiny, setDestiny] = useState<number | string>("");
     const [prefixes] = useState([11, 16, 17, 18]);
 
     useEffect(() => {
@@ -35,8 +35,11 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                     as="select"
                     value={origin}
                     onChange={handleOriginChange}
+                    required
                 >
-                    <option hidden>Origem</option>
+                    <option value="" disabled hidden selected>
+                        Origem
+                    </option>
                     {prefixes.map((prefix) =>
                         prefix !== destiny ? (
                             <option key={prefix} value={prefix}>
@@ -51,8 +54,11 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                     as="select"
                     value={destiny}
                     onChange={handleDestinyChange}
+                    required
                 >
-                    <option hidden>Destino</option>
+                    <option value="" disabled hidden selected>
+                        Destino
+                    </option>
                     {prefixes.map((prefix) =>
                         prefix !== origin ? (
                             <option key={prefix} value={prefix}>

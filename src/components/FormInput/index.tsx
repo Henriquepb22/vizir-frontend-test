@@ -15,9 +15,10 @@ const FormInput: React.FC<Props> = ({ onMinutesChange }) => {
         <Form.Group controlId="minutesControl">
             <Form.Label>Tempo falado:</Form.Label>
             <Form.Control
-                type="text"
+                type="number"
                 placeholder="Em Minutos"
                 onChange={handleMinutesChange}
+                required
             />
         </Form.Group>
     );

@@ -18,7 +18,9 @@ const FormComponent: React.FC<Props> = ({ dispatch }) => {
     const [minutes, setMinutes] = useState(0);
     const [plan, setPlan] = useState("PLUS30");
 
-    const calcValue = () => {
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
         dispatch({
             type: originDestiny,
             payload: { minutes, plan },
@@ -26,7 +28,7 @@ const FormComponent: React.FC<Props> = ({ dispatch }) => {
     };
 
     return (
-        <Form>
+        <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Row>
                 <Col sm={12} md={4}>
                     <FormLocation onLocationChange={setOriginDestiny} />
@@ -38,7 +40,7 @@ const FormComponent: React.FC<Props> = ({ dispatch }) => {
                     <FormPlans onPlansChange={setPlan} />
                 </Col>
             </Form.Row>
-            <Button onClick={calcValue} variant="primary" block>
+            <Button variant="primary" block type="submit">
                 Calcular
             </Button>
         </Form>
