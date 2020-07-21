@@ -6,10 +6,19 @@ type Props = {
 };
 
 const FormInput: React.FC<Props> = ({ onMinutesChange }) => {
+    const handleMinutesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const minutes = Number(e.target.value);
+        onMinutesChange(minutes);
+    };
+
     return (
         <Form.Group controlId="minutesControl">
             <Form.Label>Tempo falado:</Form.Label>
-            <Form.Control type="text" placeholder="Em Minutos" />
+            <Form.Control
+                type="text"
+                placeholder="Em Minutos"
+                onChange={handleMinutesChange}
+            />
         </Form.Group>
     );
 };

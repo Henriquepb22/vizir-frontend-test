@@ -7,30 +7,24 @@ import FormLocation from "../FormLocation";
 import FormInput from "../FormInput";
 import FormPlans from "../FormPlans";
 
-type Action = {
-    type: string;
-    payload: {
-        origin: number;
-        destiny: number;
-        minutes: number;
-    };
-};
+import { PlanTypeAction } from "../../reducers/types";
 
 type Props = {
-    dispatch: React.Dispatch<Action>;
+    dispatch: React.Dispatch<PlanTypeAction>;
 };
 
 const FormComponent: React.FC<Props> = ({ dispatch }) => {
     const [origin, setOrigin] = useState(0);
     const [destiny, setDestiny] = useState(0);
     const [minutes, setMinutes] = useState(0);
-    const [plan, setPlan] = useState("PLAN_PLUS30");
+    const [plan, setPlan] = useState("PLUS30");
 
-    const calcValue = () =>
+    const calcValue = () => {
         dispatch({
             type: plan,
-            payload: { origin, destiny, minutes },
+            payload: { origin, destiny, minutes, plan },
         });
+    };
 
     return (
         <Form>

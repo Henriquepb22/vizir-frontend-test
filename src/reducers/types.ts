@@ -4,5 +4,6 @@ export type PlanTypeAction = {
         origin: number;
         destiny: number;
         minutes: number;
+        plan: string;
     };
 };
