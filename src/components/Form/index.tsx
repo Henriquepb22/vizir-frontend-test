@@ -14,15 +14,14 @@ type Props = {
 };
 
 const FormComponent: React.FC<Props> = ({ dispatch }) => {
-    const [origin, setOrigin] = useState(0);
-    const [destiny, setDestiny] = useState(0);
+    const [originDestiny, setOriginDestiny] = useState("");
     const [minutes, setMinutes] = useState(0);
     const [plan, setPlan] = useState("PLUS30");
 
     const calcValue = () => {
         dispatch({
-            type: plan,
-            payload: { origin, destiny, minutes, plan },
+            type: originDestiny,
+            payload: { minutes, plan },
         });
     };
 
@@ -30,10 +29,7 @@ const FormComponent: React.FC<Props> = ({ dispatch }) => {
         <Form>
             <Form.Row>
                 <Col sm={12} md={4}>
-                    <FormLocation
-                        onOriginChange={setOrigin}
-                        onDestinyChange={setDestiny}
-                    />
+                    <FormLocation onLocationChange={setOriginDestiny} />
                 </Col>
                 <Col sm={12} md={4}>
                     <FormInput onMinutesChange={setMinutes} />

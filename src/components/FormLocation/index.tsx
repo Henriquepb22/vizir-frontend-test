@@ -1,40 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 type Props = {
-    onDestinyChange: React.Dispatch<React.SetStateAction<number>>;
-    onOriginChange: React.Dispatch<React.SetStateAction<number>>;
+    onLocationChange: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const FormLocation: React.FC<Props> = ({ onOriginChange, onDestinyChange }) => {
+const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
+    const [origin, setOrigin] = useState(0);
+    const [destiny, setDestiny] = useState(0);
+    const [prefixes] = useState([11, 16, 17, 18]);
+
+    useEffect(() => {
+        if (origin !== 0 && destiny !== 0) {
+            onLocationChange(`ORIGIN0${origin}_DESTINY0${destiny}`);
+        }
+    }, [origin, destiny, onLocationChange]);
+
     const handleOriginChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedValue = Number(e.target.value);
-        onOriginChange(selectedValue);
+        const selectedOrigin = Number(e.target.value);
+        setOrigin(selectedOrigin);
     };
 
     const handleDestinyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedValue = Number(e.target.value);
-        onDestinyChange(selectedValue);
+        const selectedDestiny = Number(e.target.value);
+        setDestiny(selectedDestiny);
     };
 
     return (
         <Form.Group controlId="dddControl">
             <Form.Label>DDD:</Form.Label>
             <InputGroup>
-                <Form.Control as="select" onChange={handleOriginChange}>
+                <Form.Control
+                    as="select"
+                    value={origin}
+                    onChange={handleOriginChange}
+                >
                     <option hidden>Origem</option>
-                    <option value={11}>011</option>
-                    <option value={16}>016</option>
-                    <option value={17}>017</option>
-                    <option value={18}>018</option>
+                    {prefixes.map((prefix) =>
+                        prefix !== destiny ? (
+                            <option key={prefix} value={prefix}>
+                                0{prefix}
+                            </option>
+                        ) : (
+                            false
+                        )
+                    )}
                 </Form.Control>
-                <Form.Control as="select" onChange={handleDestinyChange}>
+                <Form.Control
+                    as="select"
+                    value={destiny}
+                    onChange={handleDestinyChange}
+                >
                     <option hidden>Destino</option>
-                    <option value={11}>011</option>
-                    <option value={16}>016</option>
-                    <option value={17}>017</option>
-                    <option value={18}>018</option>
+                    {prefixes.map((prefix) =>
+                        prefix !== origin ? (
+                            <option key={prefix} value={prefix}>
+                                0{prefix}
+                            </option>
+                        ) : (
+                            false
+                        )
+                    )}
                 </Form.Control>
             </InputGroup>
         </Form.Group>

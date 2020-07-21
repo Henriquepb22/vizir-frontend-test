@@ -21,6 +21,7 @@ function reducer(state = initialState, action: PlanTypeAction) {
     switch (action.type) {
         case ORIGIN011_DESTINY016:
             return {
+                ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
                         ? Number(
@@ -37,6 +38,7 @@ function reducer(state = initialState, action: PlanTypeAction) {
             };
         case ORIGIN011_DESTINY017:
             return {
+                ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
                         ? Number(
@@ -53,6 +55,7 @@ function reducer(state = initialState, action: PlanTypeAction) {
             };
         case ORIGIN011_DESTINY018:
             return {
+                ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
                         ? Number(
@@ -69,6 +72,7 @@ function reducer(state = initialState, action: PlanTypeAction) {
             };
         case ORIGIN016_DESTINY011:
             return {
+                ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
                         ? Number(
@@ -85,6 +89,7 @@ function reducer(state = initialState, action: PlanTypeAction) {
             };
         case ORIGIN017_DESTINY011:
             return {
+                ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
                         ? Number(
@@ -101,6 +106,7 @@ function reducer(state = initialState, action: PlanTypeAction) {
             };
         case ORIGIN018_DESTINY011:
             return {
+                ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
                         ? Number(
@@ -116,7 +122,11 @@ function reducer(state = initialState, action: PlanTypeAction) {
                 ),
             };
         default:
-            return state;
+            return {
+                ...state,
+                withPlanValue: 0,
+                withoutPlanValue: 0,
+            };
     }
 }
 
