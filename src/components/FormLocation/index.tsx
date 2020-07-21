@@ -12,18 +12,18 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
     const [prefixes] = useState([11, 16, 17, 18]);
 
     useEffect(() => {
-        if (origin !== 0 && destiny !== 0) {
+        if (origin !== "" && destiny !== "") {
             onLocationChange(`ORIGIN0${origin}_DESTINY0${destiny}`);
         }
     }, [origin, destiny, onLocationChange]);
 
     const handleOriginChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedOrigin = Number(e.target.value);
+        const selectedOrigin = e.target.value;
         setOrigin(selectedOrigin);
     };
 
     const handleDestinyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedDestiny = Number(e.target.value);
+        const selectedDestiny = e.target.value;
         setDestiny(selectedDestiny);
     };
 
@@ -37,11 +37,11 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                     onChange={handleOriginChange}
                     required
                 >
-                    <option value="" disabled hidden selected>
+                    <option value="" disabled hidden>
                         Origem
                     </option>
                     {prefixes.map((prefix) =>
-                        prefix !== destiny ? (
+                        prefix != destiny ? (
                             <option key={prefix} value={prefix}>
                                 0{prefix}
                             </option>
@@ -56,11 +56,11 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                     onChange={handleDestinyChange}
                     required
                 >
-                    <option value="" disabled hidden selected>
+                    <option value="" disabled hidden>
                         Destino
                     </option>
                     {prefixes.map((prefix) =>
-                        prefix !== origin ? (
+                        prefix != origin ? (
                             <option key={prefix} value={prefix}>
                                 0{prefix}
                             </option>

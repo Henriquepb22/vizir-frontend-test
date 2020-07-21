@@ -6,13 +6,13 @@ import FormComponent from "../../components/Form";
 import JumbotronComponent from "../../components/Jumbotron";
 
 import reducer from "../../reducers";
-import { initialState } from "../../reducers/";
+import { initialState } from "../../reducers";
 
 const Home: React.FC = () => {
-    const [{ withPlanValue, withoutPlanValue }, dispatch] = useReducer(
-        reducer,
-        initialState
-    );
+    const [
+        { withPlanValue, withoutPlanValue, invalidOriginDestiny },
+        dispatch,
+    ] = useReducer(reducer, initialState);
 
     return (
         <main className="mt-5">
@@ -22,12 +22,14 @@ const Home: React.FC = () => {
                     <JumbotronComponent
                         label="Com FaleMais:"
                         value={withPlanValue}
+                        isValid={invalidOriginDestiny}
                     />
                 </Col>
                 <Col>
                     <JumbotronComponent
                         label="Sem FaleMais:"
                         value={withoutPlanValue}
+                        isValid={invalidOriginDestiny}
                     />
                 </Col>
             </Row>

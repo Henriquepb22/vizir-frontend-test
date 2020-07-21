@@ -11,6 +11,7 @@ import {
 export const initialState = {
     withPlanValue: 0,
     withoutPlanValue: 0,
+    invalidOriginDestiny: true,
 };
 
 function reducer(state = initialState, action: PlanTypeAction) {
@@ -24,108 +25,73 @@ function reducer(state = initialState, action: PlanTypeAction) {
                 ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
-                        ? Number(
-                              (
-                                  (action.payload.minutes -
-                                      planDiscountMinutes) *
-                                  (1.9 * 1.1)
-                              ).toFixed(2)
-                          )
+                        ? (action.payload.minutes - planDiscountMinutes) *
+                          (1.9 * 1.1)
                         : 0,
-                withoutPlanValue: Number(
-                    (action.payload.minutes * 1.9).toFixed(2)
-                ),
+                withoutPlanValue: action.payload.minutes * 1.9,
+                invalidOriginDestiny: false,
             };
         case ORIGIN011_DESTINY017:
             return {
                 ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
-                        ? Number(
-                              (
-                                  (action.payload.minutes -
-                                      planDiscountMinutes) *
-                                  (1.7 * 1.1)
-                              ).toFixed(2)
-                          )
+                        ? (action.payload.minutes - planDiscountMinutes) *
+                          (1.7 * 1.1)
                         : 0,
-                withoutPlanValue: Number(
-                    (action.payload.minutes * 1.7).toFixed(2)
-                ),
+                withoutPlanValue: action.payload.minutes * 1.7,
+                invalidOriginDestiny: false,
             };
         case ORIGIN011_DESTINY018:
             return {
                 ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
-                        ? Number(
-                              (
-                                  (action.payload.minutes -
-                                      planDiscountMinutes) *
-                                  (0.9 * 1.1)
-                              ).toFixed(2)
-                          )
+                        ? (action.payload.minutes - planDiscountMinutes) *
+                          (0.9 * 1.1)
                         : 0,
-                withoutPlanValue: Number(
-                    (action.payload.minutes * 0.9).toFixed(2)
-                ),
+                withoutPlanValue: action.payload.minutes * 0.9,
+                invalidOriginDestiny: false,
             };
         case ORIGIN016_DESTINY011:
             return {
                 ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
-                        ? Number(
-                              (
-                                  (action.payload.minutes -
-                                      planDiscountMinutes) *
-                                  (2.9 * 1.1)
-                              ).toFixed(2)
-                          )
+                        ? (action.payload.minutes - planDiscountMinutes) *
+                          (2.9 * 1.1)
                         : 0,
-                withoutPlanValue: Number(
-                    (action.payload.minutes * 2.9).toFixed(2)
-                ),
+                withoutPlanValue: action.payload.minutes * 2.9,
+                invalidOriginDestiny: false,
             };
         case ORIGIN017_DESTINY011:
             return {
                 ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
-                        ? Number(
-                              (
-                                  (action.payload.minutes -
-                                      planDiscountMinutes) *
-                                  (2.7 * 1.1)
-                              ).toFixed(2)
-                          )
+                        ? (action.payload.minutes - planDiscountMinutes) *
+                          (2.7 * 1.1)
                         : 0,
-                withoutPlanValue: Number(
-                    (action.payload.minutes * 2.7).toFixed(2)
-                ),
+                withoutPlanValue: action.payload.minutes * 2.7,
+                invalidOriginDestiny: false,
             };
         case ORIGIN018_DESTINY011:
             return {
                 ...state,
                 withPlanValue:
                     action.payload.minutes >= planDiscountMinutes
-                        ? Number(
-                              (
-                                  (action.payload.minutes -
-                                      planDiscountMinutes) *
-                                  (1.9 * 1.1)
-                              ).toFixed(2)
-                          )
+                        ? (action.payload.minutes - planDiscountMinutes) *
+                          (1.9 * 1.1)
                         : 0,
-                withoutPlanValue: Number(
-                    (action.payload.minutes * 1.9).toFixed(2)
-                ),
+                withoutPlanValue: action.payload.minutes * 1.9,
+                invalidOriginDestiny: false,
             };
         default:
             return {
                 ...state,
                 withPlanValue: 0,
                 withoutPlanValue: 0,
+                invalidOriginDestiny: true,
             };
     }
 }
