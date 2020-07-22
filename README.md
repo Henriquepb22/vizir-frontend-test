@@ -1,44 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio Front-end Vizir
 
-## Available Scripts
+Desafio realizado para uma vaga de emprego na empresa Vizir.
 
-In the project directory, you can run:
+## :pencil: Sobre
 
-### `yarn start`
+O projeto se trata de um website de uma empresa de telefonia fictícia, desenvolvido usando [ReactJS](https://pt-br.reactjs.org/), [Typescript](https://www.typescriptlang.org/), [React-Bootstrap](https://react-bootstrap.github.io/), [Jest](https://jestjs.io/) e [React Testing Library](https://testing-library.com/docs/react-testing-library/intro).
+Composto de três páginas, uma principal feita para calcular o valor das ligações, uma de planos e tarifas para saber como funciona os planos e quais as tarifas das ligações e uma página de sobre falando da "empresa".
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## :package: Como instalar e rodar
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. Clone esse repositório na pasta desejada
 
-### `yarn test`
+```bash
+  git clone https://github.com/Henriquepb22/vizir-frontend-test
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Entre na pasta do projeto e execute as instalações das dependencias
 
-### `yarn build`
+```bash
+  cd vizir-frontend-test
+  ## usando npm
+  npm install
+  ## usando yarn
+  yarn install
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ## após finalizar o download das dependencias rode o projeto
+  npm run start
+  ## com yarn
+  yarn start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+3. Agora é só abrir o [localhost:3000](http://localhost:3000) e pronto!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Caso deseje rodar os testes execute o seguinte comando:
+```bash
 
-### `yarn eject`
+  ## usando npm
+  npm run test
+  ## usando yarn
+  yarn test
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :question: Como usar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Na página principal selecione o DDD de origem e de destino, depois digite a quantidade de minutos falados e depois escolha o plano que deseja, após isso clique em calcular e o valor será carregado.
+Se desejar saber quais os valores e como funciona o calculo, navegue para a página de planos e tarifas.
+E para saber mais sobre a empresa navegue para a página de sobre.
