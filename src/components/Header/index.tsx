@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                             Inicio
                         </Nav.Link>
                         <Nav.Link as={NavLink} to="/planos">
-                            Planos
+                            Planos e Tarifas
                         </Nav.Link>
                         <Nav.Link as={NavLink} to="/sobre">
                             Sobre Nós

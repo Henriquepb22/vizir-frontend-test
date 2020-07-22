@@ -16,16 +16,21 @@ const Home: React.FC = () => {
 
     return (
         <main className="mt-5">
+            <h1 className="display-4">Calculadora de Custo</h1>
+            <p className="lead">
+                Digite o DDD de origem e destino, os minutos falados e escolha o
+                plano para saber quanto você pagaria pela ligação.
+            </p>
             <FormComponent dispatch={dispatch} />
             <Row className="text-center justify-content-center mt-5">
-                <Col>
+                <Col md={6}>
                     <JumbotronComponent
                         label="Com FaleMais:"
                         value={withPlanValue}
                         isValid={invalidOriginDestiny}
                     />
                 </Col>
-                <Col>
+                <Col md={6}>
                     <JumbotronComponent
                         label="Sem FaleMais:"
                         value={withoutPlanValue}

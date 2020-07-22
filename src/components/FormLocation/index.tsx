@@ -41,7 +41,7 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                         Origem
                     </option>
                     {prefixes.map((prefix) =>
-                        prefix != destiny ? (
+                        prefix.toString() !== destiny ? (
                             <option key={prefix} value={prefix}>
                                 0{prefix}
                             </option>
@@ -60,7 +60,7 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                         Destino
                     </option>
                     {prefixes.map((prefix) =>
-                        prefix != origin ? (
+                        prefix.toString() !== origin ? (
                             <option key={prefix} value={prefix}>
                                 0{prefix}
                             </option>
