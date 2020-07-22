@@ -27,7 +27,10 @@ const Plans: React.FC = () => {
                 <h3>
                     <strong>Tabela de Tarifas:</strong>
                 </h3>
-                <table className="table table-sm table-bordered table-hover ">
+                <table
+                    className="table table-sm table-bordered table-hover"
+                    title="Tabela de Tarifas"
+                >
                     <thead>
                         <tr>
                             <th scope="col">Origem</th>

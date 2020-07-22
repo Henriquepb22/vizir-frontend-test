@@ -28,7 +28,7 @@ const FormComponent: React.FC<Props> = ({ dispatch }) => {
     };
 
     return (
-        <Form onSubmit={(e) => handleSubmit(e)}>
+        <Form onSubmit={(e) => handleSubmit(e)} role="form">
             <Form.Row>
                 <Col sm={12} md={4}>
                     <FormLocation onLocationChange={setOriginDestiny} />
@@ -40,7 +40,7 @@ const FormComponent: React.FC<Props> = ({ dispatch }) => {
                     <FormPlans onPlansChange={setPlan} />
                 </Col>
             </Form.Row>
-            <Button variant="primary" block type="submit">
+            <Button variant="primary" block type="submit" role="button">
                 Calcular
             </Button>
         </Form>

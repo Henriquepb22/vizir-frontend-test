@@ -35,6 +35,7 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                     as="select"
                     value={origin}
                     onChange={handleOriginChange}
+                    title="Origem"
                     required
                 >
                     <option value="" disabled hidden>
@@ -54,6 +55,7 @@ const FormLocation: React.FC<Props> = ({ onLocationChange }) => {
                     as="select"
                     value={destiny}
                     onChange={handleDestinyChange}
+                    title="Destino"
                     required
                 >
                     <option value="" disabled hidden>

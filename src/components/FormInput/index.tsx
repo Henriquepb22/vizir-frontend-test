@@ -18,6 +18,7 @@ const FormInput: React.FC<Props> = ({ onMinutesChange }) => {
                 type="number"
                 placeholder="Em Minutos"
                 onChange={handleMinutesChange}
+                title="Em Minutos"
                 required
             />
         </Form.Group>

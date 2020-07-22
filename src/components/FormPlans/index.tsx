@@ -12,7 +12,12 @@ const FormPlans: React.FC<Props> = ({ onPlansChange }) => {
     return (
         <Form.Group controlId="plansControl">
             <Form.Label>Plano:</Form.Label>
-            <Form.Control as="select" onChange={handlePlanChange} required>
+            <Form.Control
+                as="select"
+                onChange={handlePlanChange}
+                title="Planos"
+                required
+            >
                 <option value="PLUS30">FaleMais 30</option>
                 <option value="PLUS60">FaleMais 60</option>
                 <option value="PLUS120">FaleMais 120</option>
