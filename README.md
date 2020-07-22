@@ -9,13 +9,16 @@ Composto de três páginas, uma principal feita para calcular o valor das ligaç
 
 ## :package: Como instalar e rodar
 
-1. Clone esse repositório na pasta desejada
+1. Certifique-se de possuir um gerenciador de pacotes instalado em sua máquina, caso não tenha baixe e instale o [NPM](https://nodejs.org/en/download/) ou o [yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable).
+
+
+2. Clone esse repositório na pasta desejada
 
 ```bash
   git clone https://github.com/Henriquepb22/vizir-frontend-test
 ```
 
-2. Entre na pasta do projeto e execute as instalações das dependencias
+3. Entre na pasta do projeto e execute as instalações das dependencias
 
 ```bash
   cd vizir-frontend-test
@@ -30,9 +33,9 @@ Composto de três páginas, uma principal feita para calcular o valor das ligaç
   yarn start
 ```
 
-3. Agora é só abrir o [localhost:3000](http://localhost:3000) e pronto!
+4. Agora é só abrir o [localhost:3000](http://localhost:3000) e pronto!
 
-4. Caso deseje rodar os testes execute o seguinte comando:
+5. Caso deseje rodar os testes execute o seguinte comando:
 ```bash
 
   ## usando npm
